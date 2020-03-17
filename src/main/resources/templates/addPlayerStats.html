@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+
+</head>
+<body>
+
+
+<h1> Add your stats!!</h1>
+
+
+<div class="form-popup" id="myForm">
+    <form action="#" th:action="@{/addPlayerStats/{id}(id=${player.id})}" th:object="${player}" method="post">
+        <label for="td">td: </label>
+        <input type="text" name="td"/><br/>
+
+        <label for="rushYards">rushYards: </label>
+        <input type="text" name="rushYards"/><br/>
+
+        <label for="recYards">recYards: </label>
+        <input type="text" name="recYards"/><br/>
+
+        <label for="returnYards">returnYards: </label>
+        <input type="text" name="returnYards"/><br/>
+
+        <label for="throwingYards">throwingYards: </label>
+        <input type="text" name="throwingYards"/><br/>
+
+
+        <label for="throwAttenpts">throwAttenpts: </label>
+        <input type="text" name="throwAttenpts"/><br/>
+
+        <label for="throwSuccess">throwSuccess: </label>
+        <input type="text" name="throwSuccess"/><br/>
+
+        <label for="rushTD">rushTD: </label>
+        <input type="text" name="rushTD"/><br/>
+
+        <label for="recTD">recTD: </label>
+        <input type="text" name="recTD"/><br/>
+
+        <label for="fumbles">fumbles: </label>
+        <input type="text" name="fumbles"/><br/>
+
+
+        <label for="fumblesRecovered">fumblesRecovered: </label>
+        <input type="text" name="fumblesRecovered"/><br/>
+
+        <label for="forcedFumbles">forcedFumbles: </label>
+        <input type="text" name="forcedFumbles"/><br/>
+
+        <label for="sacks">sacks: </label>
+        <input type="text" name="sacks"/><br/>
+
+        <label for="puntsBlocked">puntsBlocked: </label>
+        <input type="text" name="puntsBlocked"/><br/>
+
+        <label for="fgScored">fgScored: </label>
+        <input type="text" name="fgScored"/><br/>
+
+        <label for="fgMissed">fgMissed: </label>
+        <input type="text" name="fgMissed"/><br/>
+
+        <label for="punts">punts: </label>
+        <input type="text" name="punts"/><br/>
+
+        <label for="tackle">tackle: </label>
+        <input type="text" name="tackle"/><br/>
+
+
+
+
+
+        <div class="mytest">
+            <input type="submit" value="Add"/>
+        </div>
+
+
+
+        <a href="/player">Close</a>
+    </form>
+</div>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+
+    }
+
+</script>
+</body>
+</html>

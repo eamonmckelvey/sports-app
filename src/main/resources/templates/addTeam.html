@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+
+</head>
+<body>
+
+
+    <h1> Add your Team!!</h1>
+
+
+    <div class="form-popup" id="myForm">
+    <form method="POST" th:action="@{/addTeam}" class="form-container" id="aboutForm">
+        <label for="teamName">Team name: </label>
+        <input type="text" name="teamName"/><br/>
+
+        <label for="location">Location: </label>
+        <input type="text" name="location"/><br/>
+
+        <label for="nickName">Nickname: </label>
+        <input type="text" name="nickName"/><br/>
+
+        <label for="yearEstablished">Year Formed: </label>
+        <input type="text" name="yearEstablished"/><br/>
+
+
+        <label for="sport">Sport:</label>
+        <select name="sport">
+            <option th:each="colorOpt : ${T(sportsapp.sportsapp.Sport).values()}"
+                    th:value="${colorOpt}" th:text="${colorOpt.displayName}"></option>
+        </select>
+
+
+        <label for="divison">Divison:</label>
+        <select name="divison">
+            <option th:each="colorOpt : ${T(sportsapp.sportsapp.Divison).values()}"
+                    th:value="${colorOpt}" th:text="${colorOpt.displayValue}"></option>
+        </select>
+
+
+
+        <div class="mytest">
+            <input type="submit" value="Add"/>
+        </div>
+
+
+
+        <a href="/team">Close</a>
+    </form>
+</div>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Team</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 style="font-size:50px">Team</h1>
+    </div>
+</div>
+
+
+<div class="tab">
+
+    <button class="tablinks"><a href="team">Team</a></button>
+    <button class="tablinks"><a href="player">Players</a></button>
+    <button class="tablinks"><a href="fixtures">Fixtures</a></button>
+
+</div>
+
+<div id="Home" class="tabcontent">
+    <h3>Home</h3>
+</div>
+
+<div id="About" class="tabcontent">
+    <h3>Team Info</h3>
+</div>
+
+<div id="Contact" class="tabcontent">
+    <h3>Player Info</h3>
+</div>
+
+    <table>
+        <tr>
+            <th>Team name</th>
+            <th>Location</th>
+            <th>Nickname</th>
+            <th>Year Formed</th>
+            <th>Sport</th>
+            <th>Division</th>
+
+
+
+        </tr>
+        <tr th:each = "about: ${team}">
+            <td th:text="${about.teamName}"></td>
+            <td th:text="${about.location}"></td>
+            <td th:text="${about.nickName}"></td>
+            <td th:text="${about.yearEstablished}"></td>
+            <td th:text="${about.sport}"></td>
+            <td th:text="${about.divison}"></td>
+            <td><a th:href="@{/edit/{id}(id=${about.id})}">Edit</a></td>
+
+
+        </tr>
+
+
+
+        <!--<input type="file" name="pic" accept="image/*">
+        <input type="submit">-->
+
+    </table>
+<td><a href="/addTeam">Add</a></td>
+
+
+
+<!--
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+-->
+
+</body>
+</html>

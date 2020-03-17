@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="container my-5">
+    <h2 class="mb-5">Update Player</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/updatePlayer/{id}(id=${player.id})}" th:object="${player}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="name" class="col-form-label">Player Name</label>
+                        <input type="text" th:field="*{playerName}" class="form-control" id="playerName" placeholder="Player Name">
+
+                        <label for="name" class="col-form-label">D.O.B</label>
+                        <input type="text" th:field="*{dob}" class="form-control" id="dob" placeholder="D.O.B">
+
+                        <label for="name" class="col-form-label">Hometown</label>
+                        <input type="text" th:field="*{hometown}" class="form-control" id="hometown" placeholder="Hometown">
+
+
+                        <label for="name" class="col-form-label">Weight</label>
+                        <input type="text" th:field="*{weight}" class="form-control" id="weight" placeholder="Weight">
+
+                        <label for="name" class="col-form-label">Height</label>
+                        <input type="text" th:field="*{height}" class="form-control" id="height" placeholder="Height">
+
+
+                        <label for="position">Position:</label>
+                        <select name="position" th:field="*{position}">
+                            <option th:each="colorOpt : ${T(sportsapp.sportsapp.Position).values()}"
+                                    th:value="${colorOpt}" th:text="${colorOpt.displayPosition}"></option>
+                        </select>
+
+                        <div class="row">
+                            <div class="col-md-6 mt-5">
+                                <input type="submit" class="btn btn-primary" value="Update Player">
+                                <td><a href="/player">Close</a></td>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+</body>
+</html>

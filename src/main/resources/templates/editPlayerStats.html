@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shards.min.css">
+
+</head>
+<body>
+
+
+<h1> Add your stats!!</h1>
+
+
+
+<div class="form-popup" id="myForm">
+    <h2 class="mb-5">Update Fixtures</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-popup" id="myForm">
+                <form th:object="${fixtures}" method="post">
+
+                    <label for="rushYards" class="col-form-label">rushYards</label>
+                    <input type="text" th:field="*{rushYards}" class="form-control" id="rushYards" placeholder="rushYards">
+
+                    <td>
+                        <label for="recYards" class="col-form-label">rushYards</label>
+                        <input type="text" th:field="*{recYards}" class="form-control" id="recYards" placeholder="recYards">
+                    </td>
+
+                    <label for="returnYards" class="col-form-label">returnYards</label>
+                    <input type="text" th:field="*{returnYards}" class="form-control" id="returnYards" placeholder="returnYards">
+
+                    <label for="throwingYards" class="col-form-label">throwingYards</label>
+                    <input type="text" th:field="*{throwingYards}" class="form-control" id="throwingYards" placeholder="throwingYards">
+
+                    <label for="throwAttenpts" class="col-form-label">throwAttenpts</label>
+                    <input type="text" th:field="*{throwAttenpts}" class="form-control" id="throwAttenpts" placeholder="throwAttenpts">
+
+                    <label for="throwSuccess" class="col-form-label">throwSuccess</label>
+                    <input type="text" th:field="*{throwSuccess}" class="form-control" id="throwSuccess" placeholder="throwSuccess">
+
+                    <label for="rushTD" class="col-form-label">rushTD</label>
+                    <input type="text" th:field="*{rushTD}" class="form-control" id="rushTD" placeholder="rushTD">
+
+
+                    <label for="recTD" class="col-form-label">recTD</label>
+                    <input type="text" th:field="*{recTD}" class="form-control" id="recTD" placeholder="recTD">
+
+                    <label for="fumbles" class="col-form-label">fumbles</label>
+                    <input type="text" th:field="*{fumbles}" class="form-control" id="fumbles" placeholder="fumbles">
+
+
+                    <label for="punts" class="col-form-label">punts</label>
+                    <input type="text" th:field="*{punts}" class="form-control" id="punts" placeholder="punts">
+
+                    <label for="tackle" class="col-form-label">tackle</label>
+                    <input type="text" th:field="*{tackle}" class="form-control" id="tackle" placeholder="tackle">
+
+
+                    <label for="fgMissed" class="col-form-label">fgMissed</label>
+                    <input type="text" <th th:field="*{fgMissed}" class="form-control" id="fgMissed" placeholder="fgMissed">
+
+                    <label for="fgScored" class="col-form-label">fgScored</label>
+                    <input type="text" th:field="*{fgScored}" class="form-control" id="fgScored" placeholder="fgScored">
+
+                    <label for="puntsBlocked" class="col-form-label">puntsBlocked</label>
+                    <input type="text" th:field="*{puntsBlocked}" class="form-control" id="puntsBlocked" placeholder="puntsBlocked">
+
+                    <label for="sacks" class="col-form-label">sacks</label>
+                    <input type="text" th:field="*{sacks}" class="form-control" id="sacks" placeholder="sacks">
+
+
+                    <label for="forcedFumbles" class="col-form-label">forcedFumbles</label>
+                    <input type="text" th:field="*{forcedFumbles}" class="form-control" id="forcedFumbles" placeholder="forcedFumbles">
+
+                    <label for="fumblesRecovered" class="col-form-label">fumblesRecovered</label>
+                    <input type="text" th:field="*{fumblesRecovered}" class="form-control" id="fumblesRecovered" placeholder="fumblesRecovered">
+
+                </tr>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

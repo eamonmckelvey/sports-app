@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Team</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 style="font-size:50px">Team</h1>
+    </div>
+</div>
+
+
+<div class="tab">
+
+    <button class="tablinks"><a href="team">Team</a></button>
+    <button class="tablinks"><a href="player">Players</a></button>
+    <button class="tablinks"><a href="fixtures">Fixtures</a></button>
+
+</div>
+
+
+
+<table>
+    <tr>
+        <th>Rush Yards</th>
+        <th>Rec Yards</th>
+        <th>Return Yards</th>
+        <th>Throwing Yards</th>
+        <th>Throw Attempts</th>
+        <th>Throw Success</th>
+        <th>Rush TD</th>
+        <th>Rec TD</th>
+        <th>Fumbles</th>
+        <th>Punts</th>
+        <th>Tackle</th>
+        <th>FG Missed</th>
+        <th>FG Scored</th>
+        <th>Fumbles</th>
+        <th>Punts Blocked</th>
+        <th>Sacks</th>
+        <th>Forced Fumbles</th>
+        <th>Fumble Recoveries</th>
+
+
+
+
+    </tr>
+    <tr th:each = "about: ${playerStats}">
+        <td th:text="${about.rushYards}"></td>
+        <td th:text="${about.recYards}"></td>
+        <td th:text="${about.returnYards}"></td>
+        <td th:text="${about.throwingYards}"></td>
+        <td th:text="${about.throwAttenpts}"></td>
+        <td th:text="${about.throwSuccess}"></td>
+        <td th:text="${about.rushTD}"></td>
+        <td th:text="${about.recTD}"></td>
+        <td th:text="${about.fumbles}"></td>
+        <td th:text="${about.punts}"></td>
+        <td th:text="${about.tackle}"></td>
+        <td th:text="${about.fgMissed}"></td>
+        <td th:text="${about.fgScored}"></td>
+        <td th:text="${about.fumbles}"></td>
+        <td th:text="${about.puntsBlocked}"></td>
+        <td th:text="${about.sacks}"></td>
+        <td th:text="${about.forcedFumbles}"></td>
+        <td th:text="${about.fumblesRecovered}"></td>
+
+
+    </tr>
+
+
+
+    <!--<input type="file" name="pic" accept="image/*">
+    <input type="submit">-->
+
+</table>
+<td><a href="/player">Back</a></td>
+<td><a href="/addPlayerStats">Edit</a></td>
+
+
+
+<!--
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+-->
+
+</body>
+</html>

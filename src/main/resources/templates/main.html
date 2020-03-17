@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sports</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<div class="hero-image">
+    <div class="hero-text">
+        <h1 style="font-size:50px">My Sports App</h1>
+    </div>
+</div>
+
+
+<div class="tab">
+
+    <button class="tablinks"><a href="team">Team Info</a></button>
+    <button class="tablinks"><a href="player">Players Info</a></button>
+    <button class="tablinks"><a href="sports">Sports</a></button>
+
+</div>
+
+<div id="Home" class="tabcontent">
+    <h3>Home</h3>
+</div>
+
+<div id="About" class="tabcontent">
+    <h3>Team</h3>
+</div>
+
+<div id="Contact" class="tabcontent">
+    <h3>Players Info</h3>
+</div>
+
+
+
+<!--
+<script>
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+-->
+
+</body>
+</html>

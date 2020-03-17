@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+
+<h1>Welcome to my Sports App!!...</h1>
+
+<div id="gif">
+    <img src=https://media.giphy.com/media/l2YWfJ8WCq1zWgFyw/giphy.gif style="align-content:center;width:320px;height:225px" />
+</div>
+
+
+<form method="GET" th:action="@{/team}" id="team">
+    <input type="submit" value="Login!!"/>
+</form>
+
+<form method="POST" th:action="@{/logout}" id="logoutForm">
+    <input type="submit" value="Logout"/>
+</form>
+
+
+
+</body>
+
+</html>
