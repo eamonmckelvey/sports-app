@@ -5,6 +5,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 @Data
 @Entity
@@ -12,7 +14,8 @@ import java.io.Serializable;
 public class Fixtures implements Serializable {
 
     @OneToOne
-    private Team team;
+    private User user;
+   // private User user;
 
     private static final long serialVersionUID = 1L;
 

@@ -16,49 +16,76 @@
 
 <div class="tab">
 
-    <button class="tablinks"><a href="team">Team</a></button>
-    <button class="tablinks"><a href="player">Players</a></button>
-    <button class="tablinks"><a href="fixtures">Fixtures</a></button>
+    <button class="tablinks"><a href="/team">Team</a></button>
+    <button class="tablinks"><a href="/player">Players</a></button>
+    <button class="tablinks"><a href="/fixtures">Fixtures</a></button>
 
 </div>
 
 
+<table id="emp-dick">
+    <thead>
 
-<table>
+    <h2>Offence</h2>
     <tr>
-        <th>Rush Yards</th>
-        <th>Rec Yards</th>
-        <th>Return Yards</th>
-        <th>Throwing Yards</th>
-        <th>Throw Attempts</th>
-        <th>Throw Success</th>
+
+
+
+        <th>Opponent</th>
+        <th>Rush Attempts</th>
+        <th>Rush Yds</th>
         <th>Rush TD</th>
         <th>Rec TD</th>
+        <th>Rec Yds</th>
+        <th>Reception</th>
+        <th>Return Yds</th>
+        <th>Throwing Yds</th>
+        <th>Throw Att</th>
+        <th>Throw Success</th>
         <th>Fumbles</th>
+
+
+
+    </tr>
+
+    <tr th:each = "about: ${playerStats}">
+
+        <td th:text="${about.rushAttempts}"></td>
+        <td th:text="${about.rushYards}"></td>
+        <td th:text="${about.rushTD}"></td>
+        <td th:text="${about.recTD}"></td>
+        <td th:text="${about.recYards}"></td>
+        <td th:text="${about.receptions}"></td>
+        <td th:text="${about.returnYards}"></td>
+        <td th:text="${about.throwingYards}"></td>
+        <td th:text="${about.throwAttenpts}"></td>
+        <td th:text="${about.throwSuccess}"></td>
+        <td th:text="${about.fumbles}"></td>
+
+    </thead>
+
+</table>
+
+<table>
+
+    <thead>
+
+    <h2>Defence/Special Teams</h2>
+    <tr>
+
         <th>Punts</th>
         <th>Tackle</th>
         <th>FG Missed</th>
         <th>FG Scored</th>
         <th>Fumbles</th>
-        <th>Punts Blocked</th>
+        <th>Punts Blk</th>
         <th>Sacks</th>
-        <th>Forced Fumbles</th>
-        <th>Fumble Recoveries</th>
-
-
-
+        <th>FF</th>
+        <th>FR</th>
 
     </tr>
+
     <tr th:each = "about: ${playerStats}">
-        <td th:text="${about.rushYards}"></td>
-        <td th:text="${about.recYards}"></td>
-        <td th:text="${about.returnYards}"></td>
-        <td th:text="${about.throwingYards}"></td>
-        <td th:text="${about.throwAttenpts}"></td>
-        <td th:text="${about.throwSuccess}"></td>
-        <td th:text="${about.rushTD}"></td>
-        <td th:text="${about.recTD}"></td>
-        <td th:text="${about.fumbles}"></td>
         <td th:text="${about.punts}"></td>
         <td th:text="${about.tackle}"></td>
         <td th:text="${about.fgMissed}"></td>
@@ -68,22 +95,17 @@
         <td th:text="${about.sacks}"></td>
         <td th:text="${about.forcedFumbles}"></td>
         <td th:text="${about.fumblesRecovered}"></td>
+    </thead>
 
-
-    </tr>
-
-
-
-    <!--<input type="file" name="pic" accept="image/*">
-    <input type="submit">-->
 
 </table>
+
 <td><a href="/player">Back</a></td>
-<td><a href="/addPlayerStats">Edit</a></td>
+<!--<td><a href="/addPlayerStats">Edit</a></td>
 
 
 
-<!--
+
 <script>
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;

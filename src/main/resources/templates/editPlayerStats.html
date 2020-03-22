@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-popup" id="myForm">
-                <form th:object="${fixtures}" method="post">
+                <form action="#" th:action="@{/editPlayerStats/{id}(id=${playerStats.id})}" th:object="${playerStats}" method="post">
 
                     <label for="rushYards" class="col-form-label">rushYards</label>
                     <input type="text" th:field="*{rushYards}" class="form-control" id="rushYards" placeholder="rushYards">

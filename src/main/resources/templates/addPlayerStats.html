@@ -21,11 +21,27 @@
         <label for="td">td: </label>
         <input type="text" name="td"/><br/>
 
+        <label for="rushAttempts">Rush Attempts: </label>
+        <input type="text" name="rushAttempts"/><br/>
+
         <label for="rushYards">rushYards: </label>
         <input type="text" name="rushYards"/><br/>
 
+        <label for="rushTD">rushTD: </label>
+        <input type="text" name="rushTD"/><br/>
+
+        <label for="recTD">recTD: </label>
+        <input type="text" name="recTD"/><br/>
+
         <label for="recYards">recYards: </label>
         <input type="text" name="recYards"/><br/>
+
+        <label for="targets">Targets: </label>
+        <input type="text" name="targets"/><br/>
+
+        <label for="receptions">Receptions: </label>
+        <input type="text" name="receptions"/><br/>
+
 
         <label for="returnYards">returnYards: </label>
         <input type="text" name="returnYards"/><br/>
@@ -40,11 +56,7 @@
         <label for="throwSuccess">throwSuccess: </label>
         <input type="text" name="throwSuccess"/><br/>
 
-        <label for="rushTD">rushTD: </label>
-        <input type="text" name="rushTD"/><br/>
 
-        <label for="recTD">recTD: </label>
-        <input type="text" name="recTD"/><br/>
 
         <label for="fumbles">fumbles: </label>
         <input type="text" name="fumbles"/><br/>
@@ -75,7 +87,13 @@
         <input type="text" name="tackle"/><br/>
 
 
-
+        <div>
+            <label for="opponents1">Opponent</label>
+            <select name="opponents1">
+                <option th:each="colorOpt : ${T(sportsapp.sportsapp.Opponents).values()}"
+                        th:value="${colorOpt}" th:text="${colorOpt.displayValue}"></option>
+            </select>
+        </div>
 
 
         <div class="mytest">

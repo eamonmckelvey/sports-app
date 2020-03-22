@@ -8,6 +8,8 @@ public interface PlayerStatsRepository extends CrudRepository<PlayerStats, Long>
 
     PlayerStats findAllById(Long id);
 
+    PlayerStats findAllById(String id);
+
 
 }
 

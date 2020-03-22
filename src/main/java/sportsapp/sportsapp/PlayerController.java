@@ -35,7 +35,7 @@ public class PlayerController {
 
     @GetMapping("/player")
     public String displayPlayer(@PageableDefault(size = 10, sort = "playerName") Pageable pageable,
-                               Model model) {
+                                Model model) {
         Page<Player> page = playerRepository.findAll(pageable);
         List<Sort.Order> sortOrders = page.getSort().stream().collect(Collectors.toList());
         if (sortOrders.size() > 0) {
@@ -50,7 +50,7 @@ public class PlayerController {
 
 
     @GetMapping("/addPlayer")
-    public String showSignUpFormPlayer(User user) {
+    public String showSignUpFormPlayer(Team team) {
         return "addPlayer";
     }
 

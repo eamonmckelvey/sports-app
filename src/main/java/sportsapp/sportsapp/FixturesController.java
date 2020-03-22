@@ -41,18 +41,19 @@ public class FixturesController {
 
     @PostMapping("/addFixtures")
     public String processFixtures(@Valid Fixtures fixtures, BindingResult result, SessionStatus sessionStatus,
-                                 Team team, Model model) {
+                                 @AuthenticationPrincipal User user, Model model) {
         if (result.hasErrors()) {
             return "addFixtures";
         }
 
         //
         //
-        fixtures.setTeam(team);
+        fixtures.setUser(user);
         service.save(fixtures);
         model.addAttribute("fixtures", service.findAll());
         return "fixtures";
     }
+
 
 /*
     @GetMapping("/team")

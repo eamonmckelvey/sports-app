@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 public class PlayerStats implements Serializable {
 
-    @OneToOne
+    @ManyToOne
     private Player player;
 
 
@@ -28,6 +28,8 @@ public class PlayerStats implements Serializable {
     private int td;
     private int rushYards;
     private int recYards;
+    private int rushAttempts;
+    private int targets;
     private int returnYards;
     private int throwingYards;
     private int throwAttenpts;
@@ -45,5 +47,5 @@ public class PlayerStats implements Serializable {
     private int punts;
     private int tackle;
 
-    //public Opponents opponents1;
+    public Opponents opponents1;
 }

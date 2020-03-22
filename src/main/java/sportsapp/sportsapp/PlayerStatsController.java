@@ -32,7 +32,7 @@ public class PlayerStatsController {
 
     @PostMapping("/addPlayerStats/{id}")
     public String processPlayer1(@Valid PlayerStats playerStats, BindingResult result, SessionStatus sessionStatus,
-                                 Player player, Model model) {
+                                 Player player, Fixtures fixtures, Model model) {
         if (result.hasErrors()) {
             return "player";
         }
