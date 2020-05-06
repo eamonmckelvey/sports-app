@@ -34,15 +34,23 @@
         <th>Opponent</th>
         <th>Rush Attempts</th>
         <th>Rush Yds</th>
+        <th>Yards per carry</th>
         <th>Rush TD</th>
         <th>Rec TD</th>
         <th>Rec Yds</th>
+        <th>Targets</th>
         <th>Reception</th>
+        <th>Catch success</th>
+        <th>Yards per catch</th>
         <th>Return Yds</th>
         <th>Throwing Yds</th>
         <th>Throw Att</th>
         <th>Throw Success</th>
+        <th>Throw %</th>
+        <th>INT</th>
+        <th>TDs</th>
         <th>Fumbles</th>
+        <th>QBR</th>
 
 
 
@@ -50,17 +58,26 @@
 
     <tr th:each = "about: ${playerStats}">
 
+        <td th:text="${about.opponents1.displayValue}"></td>
         <td th:text="${about.rushAttempts}"></td>
         <td th:text="${about.rushYards}"></td>
+        <td th:text="${about.yardsPerAttempt}"></td>
         <td th:text="${about.rushTD}"></td>
         <td th:text="${about.recTD}"></td>
         <td th:text="${about.recYards}"></td>
+        <td th:text="${about.targets}"></td>
         <td th:text="${about.receptions}"></td>
+        <td th:text="${about.catchSuccess}"></td>
+        <td th:text="${about.yardsPerCatch}"></td>
         <td th:text="${about.returnYards}"></td>
         <td th:text="${about.throwingYards}"></td>
         <td th:text="${about.throwAttenpts}"></td>
         <td th:text="${about.throwSuccess}"></td>
+        <td th:text="${about.throwSuccessPercent}"></td>
+        <td th:text="${about.ints}"></td>
+        <td th:text="${about.td}"></td>
         <td th:text="${about.fumbles}"></td>
+        <td th:text="${about.passerRating}"></td>
 
     </thead>
 
@@ -77,7 +94,6 @@
         <th>Tackle</th>
         <th>FG Missed</th>
         <th>FG Scored</th>
-        <th>Fumbles</th>
         <th>Punts Blk</th>
         <th>Sacks</th>
         <th>FF</th>
@@ -90,7 +106,6 @@
         <td th:text="${about.tackle}"></td>
         <td th:text="${about.fgMissed}"></td>
         <td th:text="${about.fgScored}"></td>
-        <td th:text="${about.fumbles}"></td>
         <td th:text="${about.puntsBlocked}"></td>
         <td th:text="${about.sacks}"></td>
         <td th:text="${about.forcedFumbles}"></td>

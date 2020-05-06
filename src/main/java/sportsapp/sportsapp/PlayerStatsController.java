@@ -42,8 +42,15 @@ public class PlayerStatsController {
 			return "player";
 		}
 
+
 		playerStats.setPlayer(player);
 		playerStats.setId(null);
+		playerStats.CatchSuccess();
+		playerStats.ThrowSuccessPercent();
+		playerStats.YardsPerAttempt();
+		playerStats.YardsPerCatch();
+		playerStats.calculateNflPasserRating();
+		//playerStats.QbRating();
 		service.save(playerStats);
 		model.addAttribute("playerStats", service.findAll());
 		return "redirect:/player";
